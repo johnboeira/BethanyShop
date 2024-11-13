@@ -1,5 +1,32 @@
-﻿<h3>EmployeeOverview</h3>
+﻿@page "/employeeoverview"
 
-@code {
+<h2>Employee Overview</h2>
 
+@if (employees == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in employees)
+            {
+                <tr>
+                    <td><img src="@($"https://gillcleerenpluralsight.blob.core.windows.net/person/{employee.EmployeeId}-small.jpg")" class="rounded-circle" /></td>
+                    <th>@employee.EmployeeId</th>
+                    <th>@employee.FirstName</th>
+                    <th>@employee.LastName</th>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
