@@ -5,10 +5,10 @@ namespace BethanyShop.Pages;
 
 public partial class EmployeeOverview
 {
-    public List<Employee>? employees { get; set; } = default;
+    public List<Employee>? Employees { get; set; } = default;
 
     protected override void OnInitialized()
     {
-        employees = MockDataService.Employees;
+        Employees = MockDataService.Employees;
     }
 }
