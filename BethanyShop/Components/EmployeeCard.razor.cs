@@ -14,6 +14,14 @@ public partial class EmployeeCard
     [Inject]
     public NavigationManager NavigationManager { get; set; } = default!;
 
+    protected override void OnInitialized()
+    {
+        if (string.IsNullOrEmpty(Employee.LastName))
+        {
+            throw new Exception();
+        }
+    }
+
     public void NavigateToDetails(Employee employee)
     {
         NavigationManager.NavigateTo($"/employeedetail/{employee.EmployeeId}");

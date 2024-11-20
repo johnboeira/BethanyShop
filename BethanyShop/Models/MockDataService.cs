@@ -70,7 +70,30 @@ namespace BethanyShop.Models
                 CountryId = _countries[1].CountryId
             };
 
-            return new List<Employee>() { e1, e2 };
+            var e3 = new Employee
+            {
+                MaritalStatus = MaritalStatus.Married,
+                BirthDate = new DateTime(1979, 1, 16),
+                City = "Antwerp",
+                Email = "julie@bethanyspieshop.com",
+                EmployeeId = 3,
+                FirstName = "julie",
+                LastName = "",
+                Gender = Gender.Male,
+                PhoneNumber = "33999909923",
+                Smoker = false,
+                Street = "New Street",
+                Zip = "20001",
+                JobCategory = _jobCategories[1],
+                JobCategoryId = _jobCategories[1].JobCategoryId,
+                Comment = "Lorem Ipsum",
+                ExitDate = null,
+                JoinedDate = new DateTime(2017, 12, 24),
+                Country = _countries[1],
+                CountryId = _countries[1].CountryId
+            };
+
+            return new List<Employee>() { e1, e2, e3 };
         }
 
         private static List<JobCategory> InitializeMockJobCategories()
