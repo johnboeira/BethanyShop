@@ -7,6 +7,7 @@ public partial class EmployeeOverview
 {
     public List<Employee>? Employees { get; set; } = default;
     private Employee? _selectedEmployee;
+    private string title = "Employee Overview";
 
     protected override void OnInitialized()
     {
