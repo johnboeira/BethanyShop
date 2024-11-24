@@ -5,7 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddDbContext<AppDbContext>(options => {
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
     options.UseSqlServer(
         builder.Configuration["ConnectionStrings:DefaultConnection"]);
 });
@@ -38,6 +39,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
