@@ -10,4 +10,6 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(
     cliente => cliente.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 
+builder.Services.AddScoped<ApplicationState>();
+
 await builder.Build().RunAsync();
